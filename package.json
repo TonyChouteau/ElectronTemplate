@@ -1,0 +1,51 @@
+{
+	"name": "electrontemplate",
+	"version": "1.0.0",
+	"description": "ElectronTemplate",
+	"main": "./src/engine/main.js",
+	"scripts": {
+		"start": "electron .",
+		"clean": "rimraf ./dist/*",
+		"build": "electron-builder --win --ia32",
+		"react": "babel --watch src/renderer/src --out-dir src/renderer/public/scripts --presets react-app/prod"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/TonyChouteau/ElectronTemplate.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/TonyChouteau/ElectronTemplate/issues"
+	},
+	"homepage": "https://github.com/TonyChouteau/ElectronTemplate#readme",
+	"keywords": [],
+	"devDependencies": {
+		"electron": "^12.0.4",
+		"electron-builder": "^22.10.5"
+	},
+	"build": {
+		"productName": "RL Map Manager",
+		"files": [
+			"!tests",
+			"!doc",
+			"!tmp",
+			"!dist"
+		],
+		"nsis": {
+			"include": "./build/installer.nsh"
+		},
+		"asar": true,
+		"win": {
+			"icon": "./build/app_icon.ico",
+			"target": [
+				"portable",
+				"nsis"
+			]
+		}
+	},
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-react-app": "^3.1.2"
+	}
+}
