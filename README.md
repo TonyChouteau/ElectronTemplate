@@ -1,5 +1,7 @@
 # ElectronTemplate
 
+A simple template for building your own ElectronJS app with React.js
+
 ## Installation :
 
 Init npm : \
